@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jerryliu862/helloCI#readme",
   "dependencies": {
+    "circleci-cli": "^0.0.6",
     "express": "^4.18.1"
   }
 }
