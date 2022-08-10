@@ -1,11 +1,21 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
 jobs:
-  build:
+  build-and-test:
     docker:
-      - image: cimg/node:16.15.0-browse
+      - image: "cimg/base:stable"
     steps:
-      - run: node --version      
       - checkout
-      - run: yarn 
-      - run: yarn build
-      - run: yarn run start
+      - node/install:
+          node-version: "16.13.1"
+      - node/install-packages
+      - run:
+          command: yarn 
+      - run:
+          command: yarn run start
+
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
