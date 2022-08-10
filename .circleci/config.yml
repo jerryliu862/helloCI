@@ -7,5 +7,4 @@ jobs:
 steps:
       - checkout
       - run: yarn 
-      - run: yarn build
       - run: yarn run start
