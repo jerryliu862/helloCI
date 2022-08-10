@@ -7,4 +7,5 @@ jobs:
       - checkout
       - run: node --version
       - run: yarn 
+      - run: yarn build
       - run: yarn run start
