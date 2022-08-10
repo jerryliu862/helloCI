@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/node:18.7.0
+      - image: cimg/node:16.15.0-browse
     steps:
+      - run: node --version      
       - checkout
-      - run: node --version
       - run: yarn 
       - run: yarn build
       - run: yarn run start
