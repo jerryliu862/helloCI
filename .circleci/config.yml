@@ -6,6 +6,9 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
+      - docker/check:
+          docker-username: jerryliu  # DOCKER_LOGIN is the default value, if it exists, it automatically would be used.
+          docker-password: moly2002       
       - checkout
       - node/install:
           node-version: "16.13.1-browsers"
